@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="appointment_tree_view" model="ir.ui.view">
+            <field name="name">appointment.tree.view</field>
+            <field name="model">appointment.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="f_name"/>
+                    <field name="l_name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="date"/>
+                    <field name="message"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Form View -->
+        <record id="appointment_form_view" model="ir.ui.view">
+            <field name="name">appointment.form.view</field>
+            <field name="medel">appointment.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Appointment Information">
+                            <group>
+                                <field name="f_name"/>
+                                <field name="email"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="l_name"/>
+                                <field name="phone"/>
+                                <field name="message"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Chart View -->
+        <record id="Appointment_chart_view" model="ir.ui.view">
+            <field name="name">Appointment.chart.view</field>
+            <field name="model">appointment.details</field>
+            <field name="arch" type="xml">
+                <graph string="Student Graph">
+                    <field name="f_name"/>
+                    <field name="date" type="pie"/>
+                </graph>
+            </field>
+        </record>
+        <!-- Menu -->
+        <menuitem id="appointment_root_menu" name="Appointment" sequence="1"/>
+    </data>
+</odoo>
