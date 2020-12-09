@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>appointment.details</value>
+            <value eval="[
+                'f_name',
+                'f_name',
+                'email',
+                'phone',
+                'date',
+                'message'
+            ]"/>
+        </function>
+    </data>
+</odoo>

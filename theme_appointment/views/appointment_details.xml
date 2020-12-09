@@ -18,7 +18,7 @@
         <!-- Form View -->
         <record id="appointment_form_view" model="ir.ui.view">
             <field name="name">appointment.form.view</field>
-            <field name="medel">appointment.details</field>
+            <field name="model">appointment.details</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -43,13 +43,21 @@
             <field name="name">Appointment.chart.view</field>
             <field name="model">appointment.details</field>
             <field name="arch" type="xml">
-                <graph string="Student Graph">
+                <graph string="Appointment Graph">
                     <field name="f_name"/>
                     <field name="date" type="pie"/>
                 </graph>
             </field>
         </record>
         <!-- Menu -->
-        <menuitem id="appointment_root_menu" name="Appointment" sequence="1"/>
+        <record id="action_doc_appointment" model="ir.actions.act_window">
+            <field name="name">action.doc.appointment</field>
+            <field name="res_model">appointment.details</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+        <menuitem id="appointment_root_menu" name="Doc Appointment" sequence="1"/>
+        <menuitem id="doc_appointment" name="Appointments" action="action_doc_appointment" parent="appointment_root_menu"
+                  sequence="2"/>
+        <!--  End Menu  -->
     </data>
 </odoo>

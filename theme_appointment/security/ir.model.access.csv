@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_../../hspl_training_14/theme_appointment_../../hspl_training_14/theme_appointment,../../hspl_training_14/theme_appointment.../../hspl_training_14/theme_appointment,model_../../hspl_training_14/theme_appointment_../../hspl_training_14/theme_appointment,base.group_user,1,1,1,1
+access_appointment_details,access.appointment.details,model_appointment_details,base.group_user,1,1,1,1

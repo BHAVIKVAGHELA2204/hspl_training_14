@@ -4,12 +4,15 @@
     'category': 'Theme/Appointment',
     'summary': '',
     'version': '1.0',
-    'depends': ['website', 'portal'],
+    'depends': ['base', 'website', 'portal', 'website_form'],
     'data': [
+        'security/ir.model.access.csv',
         'data/additional_menu.xml',
+        'data/appointment_fields.xml',
         'views/assets.xml',
         'views/appointment.xml',
         'views/home.xml',
+        'views/appointment_details.xml',
     ],
     'images': [
         'static/src/img/appointment_logo.jpg',
