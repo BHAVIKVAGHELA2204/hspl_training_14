@@ -3,7 +3,7 @@
         <xpath expr="link[last()]" position="after">
             <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
             <link href="/theme_appointment/static/src/css/custom.css" rel="stylesheet"/>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
             <!--<script src="/theme_appointment/static/src/js/appointment.js"></script>-->
         </xpath>
     </template>

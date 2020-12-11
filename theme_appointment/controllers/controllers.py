@@ -5,6 +5,30 @@ class CuetomAppointment(http.Controller):
     def appointment_page(self,  **kwargs):
         return http.request.render('theme_appointment.appointment_page')
 
+    # @http.route('/contactus-thank-you', auth='public', type='http', website=True)
+    # def contactus_thanks(self, **kwargs):
+    #     return http.request.render('website_form.contactus_thanks')
+
+    @http.route('/patient', auth='public', type='http', website=True)
+    def patient_page(self, **kwargs):
+        return http.request.render('theme_appointment.patient_page')
+
+    @http.route('/add_patient', auth='public', type='http', website=True)
+    def add_patient(self, **kw):
+        print("-------------------------------------------->")
+        request.evn['patient.details'].sudo().create(kw)
+        return request.render('theme_appointment.patient_thank_you', {})
+
+
+    # @http.route('/Appointment_form', auth='public', type='http', website=True)
+    # def create_appointment(self, **kwargs):
+    #     return request.render('website_form.contactus_thanks', {})
+
+    # @http.route('/website_form', type='http', auth="public", methods=['POST'], website=True, csrf=True)
+    # def check_form(self, **post):
+    #     # ...
+    #     return http.request.render('/contactus-thank-you')
+
     # @http.route('/website_form', type='http', methods=['POST'], auth="public", website=True, csrf=False)
     # def test_path(self, **kw):
     #     # here in kw you can get the inputted value

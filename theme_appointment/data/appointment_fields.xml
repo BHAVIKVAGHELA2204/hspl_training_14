@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="theme_appointment.model_appointment_details" model="ir.model">
+            <field name="website_form_access" eval="True"/>
+            <field name="website_form_label">Appointment Details</field>
+        </record>
         <function model="ir.model.fields" name="formbuilder_whitelist">
             <value>appointment.details</value>
             <value eval="[
                 'f_name',
-                'f_name',
+                'l_name',
                 'email',
                 'phone',
                 'date',
