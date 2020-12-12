@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="staff_tree_view" model="ir.ui.view">
+            <field name="name">staff.tree.view</field>
+            <field name="model">staff.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name = "f_name"/>
+                    <field name = "l_name"/>
+                    <field name = "email"/>
+                    <field name = "phone"/>
+                    <field name = "dob"/>
+                    <field name = "gender"/>
+                    <field name = "job_type"/>
+                    <field name = "shift_time"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Form View -->
+        <record id="staff_form_view" model="ir.ui.view">
+            <field name="name">staff.form.view</field>
+            <field name="model">staff.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Staff Details">
+                            <group>
+                                <field name="f_name"/>
+                                <field name="l_name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="dob"/>
+                            </group>
+                            <group>
+                                <field name="gender"/>
+                                <field name="job_type"/>
+                                <field name="address"/>
+                                <field name="qualification"/>
+                                <field name="shift_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Chart View -->
+        <record id="staff_chart_view" model="ir.ui.view">
+            <field name="name">staff.chart.view</field>
+            <field name="model">staff.details</field>
+            <field name="arch" type="xml">
+                <graph string="Staff Graph">
+                    <field name="f_name"/>
+                    <field name="dob" type="pie"/>
+                </graph>
+            </field>
+        </record>
+        <!-- Menu -->
+        <record id="action_staff" model="ir.actions.act_window">
+            <field name="name">action.staff</field>
+            <field name="res_model">staff.details</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+        <menuitem id="staff_menu" name="Staff" action="action_staff" parent="appointment_root_menu" sequence="3"/>
+    </data>
+</odoo>

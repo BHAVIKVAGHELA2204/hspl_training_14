@@ -13,11 +13,12 @@ class CuetomAppointment(http.Controller):
     def patient_page(self, **kwargs):
         return http.request.render('theme_appointment.patient_page')
 
+
     @http.route('/add_patient', auth='public', type='http', website=True)
-    def add_patient(self, **kw):
+    def add_doc_patient(self, **kw):
         print("-------------------------------------------->")
         request.evn['patient.details'].sudo().create(kw)
-        return request.render('theme_appointment.patient_thank_you', {})
+        return request.render('theme_appointment.contactus_thanks', {})
 
 
     # @http.route('/Appointment_form', auth='public', type='http', website=True)
