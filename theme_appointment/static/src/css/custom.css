@@ -139,3 +139,7 @@ body {
 .banner3 .text-inverse {
   color: #3e4555 !important;
 }
+
+.pt130 {
+    padding-top: 130px !important;
+}

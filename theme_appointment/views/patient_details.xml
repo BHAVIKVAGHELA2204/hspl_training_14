@@ -51,7 +51,7 @@
         </record>
         <!-- Menu -->
         <record id="action_patient" model="ir.actions.act_window">
-            <field name="name">action.patient</field>
+            <field name="name">Patient Details</field>
             <field name="res_model">patient.details</field>
             <field name="view_mode">tree,form,graph</field>
         </record>

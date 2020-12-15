@@ -9,6 +9,8 @@ class StaffDetails(models.Model):
     email = fields.Char(string="Email", required=True)
     phone = fields.Char(string="Contact", required=True)
     dob = fields.Date(string="Date of Birth", required=True)
+    profile = fields.Binary(string="Profile Image", help="This field holds the image used as avatar for \
+        this contact, limited to 1024x1024px")
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
@@ -18,11 +20,6 @@ class StaffDetails(models.Model):
         ('doctor', 'Doctor'),
         ('nurse', 'Nurse'),
         ('helper', 'Helper')
-    ], string="JOb Type", default="Nurse")
+    ], string="JOb Type", default="nurse")
     address = fields.Text(string="Address", required=True)
     qualification = fields.Char(string="Qualification", required=True)
-    shift_time = fields.Selection([
-        ('8 to 4', '8 To 4'),
-        ('4 to 11', '4 To 11'),
-        ('11 to 8', '11 To 8')
-    ], string="Shift Time", default="8 to 4")

@@ -14,6 +14,7 @@
         'views/patient.xml',
         'views/patient_details.xml',
         'views/staff_details.xml',
+        'views/footer.xml',
         'views/home.xml',
         'views/appointment_details.xml',
     ],
