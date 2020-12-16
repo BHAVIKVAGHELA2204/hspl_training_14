@@ -23,3 +23,10 @@ class StaffDetails(models.Model):
     ], string="JOb Type", default="nurse")
     address = fields.Text(string="Address", required=True)
     qualification = fields.Char(string="Qualification", required=True)
+
+    def name_get(self):
+        result = []
+        for account in self:
+            name = account.f_name + ' ' + account.l_name
+            result.append((account.id, name))
+        return result

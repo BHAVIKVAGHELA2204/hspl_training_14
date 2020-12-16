@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="slot_tree_view" model="ir.ui.view">
+            <field name="name">slot.tree.view</field>
+            <field name="model">appointment.slot</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="staff_id"/>
+                    <field name="shift_time"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Form View -->
+        <record id="slot_form_view" model="ir.ui.view">
+            <field name="name">slot.form.view</field>
+            <field name="model">appointment.slot</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="slot Information">
+                            <group>
+                                <field name="staff_id"/>
+                                <field name="shift_time"/>
+                            </group>
+                            <group>
+                                <field name="start_time" widget="float_time"/>
+                                <field name="end_time" widget="float_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Chart View -->
+        <record id="slot_chart_view" model="ir.ui.view">
+            <field name="name">slot.chart.view</field>
+            <field name="model">appointment.slot</field>
+            <field name="arch" type="xml">
+                <graph string="slot Graph">
+                    <field name="staff_id"/>
+                    <field name="start_time"/>
+                </graph>
+            </field>
+        </record>
+        <!-- Menu -->
+        <record id="action_slot" model="ir.actions.act_window">
+            <field name="name">Appointment Slot</field>
+            <field name="res_model">appointment.slot</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+        <menuitem id="doc_appointment_slot" name="Slot" action="action_slot"
+                  parent="appointment_root_menu"
+                  sequence="4"/>
+        <!--  End Menu  -->
+    </data>
+</odoo>

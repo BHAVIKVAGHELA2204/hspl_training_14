@@ -13,6 +13,7 @@
         'views/appointment.xml',
         'views/patient.xml',
         'views/patient_details.xml',
+        'views/appointment_slot.xml',
         'views/staff_details.xml',
         'views/footer.xml',
         'views/home.xml',
