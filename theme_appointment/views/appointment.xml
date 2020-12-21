@@ -58,10 +58,25 @@
                                             <div class="form-row border-bottom p-4 form-group s_website_form_field s_website_form_required">
                                                 <label class="text-inverse font-12 text-uppercase">Select Doctor</label>
                                                 <select class="border-0 p-0 font-14 form-control s_website_form_input"
-                                                       name="doctor_name" placeholder="Select Doctor">
-                                                    <option>123</option>
-                                                    <option>456</option>
-                                                    <option>789</option>
+                                                        name="staff_id" id="staff_id">
+                                                    <t t-foreach='doctor_rec' t-as='doctor_id'>
+                                                        <option t-att-value='doctor_id.id'
+                                                                t-att-selected="doctor_id.id">
+                                                            <t t-esc="doctor_id.f_name+' '+doctor_id.l_name "/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="form-row border-bottom p-4 form-group s_website_form_field s_website_form_required">
+                                                <label class="text-inverse font-12 text-uppercase">Select slot</label>
+                                                <select class="border-0 p-0 font-14 form-control s_website_form_input"
+                                                        name="slot_id" id="slot_id">
+                                                    <t t-foreach='slot_rec' t-as='slot_id'>
+                                                        <option t-att-value='slot_id.id'
+                                                                t-att-selected="slot_id.id">
+                                                            <t t-esc="slot_id.shift_time+' '+str(slot_id.end_time)+' To '+str(slot_id.start_time) "/>
+                                                        </option>
+                                                    </t>
                                                 </select>
                                             </div>
                                             <div class="form-row border-bottom p-4 form-group s_website_form_field s_website_form_required">

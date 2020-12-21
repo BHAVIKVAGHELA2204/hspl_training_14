@@ -1,9 +1,13 @@
 from odoo import http
+from odoo.http import request
 
 class CuetomAppointment(http.Controller):
     @http.route('/appointment', auth='public', type='http', website=True)
     def appointment_page(self,  **kwargs):
-        return http.request.render('theme_appointment.appointment_page')
+        doctor_rec = request.env['staff.details'].sudo().search([('job_type', '=', 'doctor')])
+        slot_rec = request.env['appointment.slot'].sudo().search([])
+        print('------------------------->', slot_rec)
+        return http.request.render('theme_appointment.appointment_page', {'doctor_rec': doctor_rec, 'slot_rec': slot_rec})
 
     # @http.route('/contactus-thank-you', auth='public', type='http', website=True)
     # def contactus_thanks(self, **kwargs):

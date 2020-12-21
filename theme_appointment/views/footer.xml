@@ -1,7 +1,7 @@
 <odoo>
     <template id="layout_footer_copyright" inherit_id="website.layout" name="Footer Copyright">
         <xpath expr="//footer/div/section[@data-snippet='s_text_block']" position="attributes">
-              <attribute name="class">s_text_block pt130 pb16</attribute>
+              <attribute name="class">s_text_block pt240 pb16</attribute>
         </xpath>
     </template>
 </odoo>

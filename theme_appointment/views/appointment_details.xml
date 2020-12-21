@@ -11,6 +11,7 @@
                     <field name="email"/>
                     <field name="phone"/>
                     <field name="date"/>
+                    <field name="app_slot_id"/>
                     <field name="message"/>
                 </tree>
             </field>
@@ -24,14 +25,15 @@
                     <sheet>
                         <group string="Appointment Information">
                             <group>
-                                <field name="f_name"/>
-                                <field name="l_name"/>
+                                <field name="f_name" required="True"/>
+                                <field name="l_name" required="True"/>
                                 <field name="email"/>
                                 <field name="phone"/>
                             </group>
                             <group>
                                 <field name="date"/>
-                                <field name="doctor"/>
+                                <field name="staff_id" domain="[('job_type', '=', 'doctor')]"/>
+                                <field name="app_slot_id" domain="[('staff_id', '=', staff_id)]"/>
                                 <field name="message"/>
                             </group>
                         </group>
